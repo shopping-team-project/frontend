@@ -1,7 +1,7 @@
 function App() {
   return (
     <>
-      <div>base page is here!</div>
+      <div className="text-3xl font-bold text-blue-600">base page is here!</div>
     </>
   );
 }
