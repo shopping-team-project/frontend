@@ -1,5 +1,5 @@
 import Header from "./components/Header";
-import Nav from "./components/nav";
+import Nav from "./components/Nav";
 import { Counter } from "./features/counter/Counter";
 
 function App() {
