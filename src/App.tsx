@@ -1,16 +1,9 @@
-import Header from "./components/Header";
-import Nav from "./components/Nav";
-import { Counter } from "./features/counter/Counter";
+import router from "./Router.tsx";
+import { RouterProvider } from "react-router-dom";
+import { ReactElement } from "react";
 
-function App() {
-  return (
-    <>
-      <Header />
-      <Nav />
-      <Counter />
-      <div>메인페이지 </div>
-    </>
-  );
+function App(): ReactElement {
+  return <RouterProvider router={router} />;
 }
 
 export default App;
