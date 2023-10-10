@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
-import { logout } from "../features/user/userSlice";
-import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { useAppSelector } from "../app/hooks";
 
 function Header() {
   const user = useAppSelector((state) => state.user.value);
-  const dispatch = useAppDispatch();
 
   return (
     <div className="sticky left-0 right-0 top-0 z-10 mx-auto flex h-16 w-full max-w-5xl items-center justify-center justify-between bg-white p-2 shadow-sm">
@@ -19,7 +17,8 @@ function Header() {
       </div>
       {user ? (
         <div className="flex h-full w-32 items-center justify-end">
-          <button onClick={() => dispatch(logout())}>로그아웃</button>
+          <Link to="mypage">마이페이지</Link>
+          <Link to="cart">장바구니</Link>
         </div>
       ) : (
         <div className="flex h-full w-32 items-center justify-end">
