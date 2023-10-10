@@ -1,4 +1,11 @@
+import { Link } from "react-router-dom";
+import { logout } from "../features/user/userSlice";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
+
 function Header() {
+  const user = useAppSelector((state) => state.user.value);
+  const dispatch = useAppDispatch();
+
   return (
     <div className="sticky left-0 right-0 top-0 z-10 mx-auto flex h-16 w-full max-w-5xl items-center justify-center justify-between bg-white p-2 shadow-sm">
       <div className="block h-full w-32">로고</div>
@@ -10,9 +17,15 @@ function Header() {
           ></input>
         </form>
       </div>
-      <div className="flex h-full w-32 items-center justify-end">
-        로그인/회원가입
-      </div>
+      {user ? (
+        <div className="flex h-full w-32 items-center justify-end">
+          <button onClick={() => dispatch(logout())}>로그아웃</button>
+        </div>
+      ) : (
+        <div className="flex h-full w-32 items-center justify-end">
+          <Link to="login">로그인/회원가입</Link>
+        </div>
+      )}
     </div>
   );
 }

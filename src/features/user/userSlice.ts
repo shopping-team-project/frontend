@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "../../app/store";
 
 export interface userState {
   value: boolean;
@@ -8,7 +9,7 @@ const initialState: userState = {
   value: false,
 };
 
-export const userSlice = createSlice({
+const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
@@ -23,8 +24,9 @@ export const userSlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
 export const { login, logout } = userSlice.actions;
+
+export const selectUser = (state: RootState) => state.user.value;
 
 export default userSlice.reducer;
 

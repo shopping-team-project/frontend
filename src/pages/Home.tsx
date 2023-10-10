@@ -16,7 +16,7 @@ function Home(): ReactElement {
         </div>
         <div className="mx-auto my-8 grid max-w-4xl grid-cols-3 gap-8">
           {[1, 2, 3, 4, 5, 6].map((item) => {
-            return <Card item={item} />;
+            return <Card item={item} key={item} />;
           })}
         </div>
       </div>
