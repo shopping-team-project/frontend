@@ -1,6 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Login from "./pages/Login.tsx";
 import Home from "./pages/Home.tsx";
+import Cart from "./pages/Cart.tsx";
+import MyPage from "./pages/MyPage.tsx";
+import Search from "./pages/Search.tsx";
 
 const router = createBrowserRouter([
   {
@@ -11,6 +14,9 @@ const router = createBrowserRouter([
     path: "/login",
     element: <Login />,
   },
+  { path: "/search", element: <Search /> },
+  { path: "/cart", element: <Cart /> },
+  { path: "/mypage", element: <MyPage />, children: [{}] },
 ]);
 
 export default router;
