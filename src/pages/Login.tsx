@@ -2,12 +2,16 @@ import { ReactElement, useState } from "react";
 import Logo from "../components/Logo.tsx";
 import naverLogin from "../../public/naverLogin.png";
 import googleLogin from "../../public/googleLogin.png";
+import { Link } from "react-router-dom";
+import { useAppDispatch } from "../app/hooks.ts";
+import { login } from "../features/user/userSlice.ts";
 
 function Login(): ReactElement {
   const [id, setId] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-
+  const dispatch = useAppDispatch();
   const handleLogin = () => {
+    dispatch(login());
     //TODO: Implement me
   };
 
@@ -42,7 +46,7 @@ function Login(): ReactElement {
             className="input-base bg-yellow-200"
             onClick={() => handleLogin()}
           >
-            로그인
+            <Link to="/">로그인</Link>
           </button>
           <hr />
           <button
