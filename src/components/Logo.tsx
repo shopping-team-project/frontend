@@ -1,7 +1,8 @@
 import { ReactElement } from "react";
+import logo from "../../public/logo.png";
 
 function Logo(): ReactElement {
-  return <div>임시 로고</div>;
+  return <img src={logo} alt="logo" />;
 }
 
 export default Logo;
