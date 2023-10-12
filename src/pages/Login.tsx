@@ -15,7 +15,7 @@ function Login(): ReactElement {
     //TODO: Implement me
   };
 
-  const handleCreateAccount = () => {
+  const handleRegister = () => {
     //TODO: Implement me
   };
 
@@ -51,7 +51,7 @@ function Login(): ReactElement {
           <hr />
           <button
             className="input-base bg-orange-200"
-            onClick={() => handleCreateAccount()}
+            onClick={() => handleRegister()}
           >
             회원가입
           </button>
