@@ -43,6 +43,7 @@ function Login(): ReactElement {
             className="input-base border-gray-400 bg-gray-100 pl-3"
           />
           <button
+            id="btn-login"
             className="input-base bg-yellow-200"
             onClick={() => handleLogin()}
           >
@@ -50,6 +51,7 @@ function Login(): ReactElement {
           </button>
           <hr />
           <button
+            id="btn-register"
             className="input-base bg-orange-200"
             onClick={() => handleRegister()}
           >
