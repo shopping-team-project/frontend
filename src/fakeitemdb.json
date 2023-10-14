@@ -1,0 +1,48 @@
+[
+  {
+    "itemDetail": "비싼물건입니다 잘 써주세요",
+    "itemid": 1,
+    "itemImgList": [
+      {
+        "itemid": 1,
+        "itemImgId": 1,
+        "oriImgName": "textImg",
+        "repImgYn": "string?",
+        "uploadImgName": "q2wev",
+        "uploadImgPath": "aw;eoif",
+        "uploadImgUrl": "aws;eio"
+      }
+    ],
+    "itemName": "test11",
+    "itemSellStatus": 1,
+    "memberNickName": "메롱이다",
+    "price": 20000,
+    "regtime": "2023-10-06T14:45:08",
+    "sellPlace": "서울 강남",
+    "stockNumber": 1,
+    "updateTime": "2023-10-06T14:45:08"
+  },
+  {
+    "itemDetail": "비싼물건입니다 잘 써주세요",
+    "itemid": 3,
+    "itemImgList": [
+      {
+        "itemid": 1,
+        "itemImgId": 1,
+        "oriImgName": "textImg",
+        "repImgYn": "string?",
+        "uploadImgName": "q2wev",
+        "uploadImgPath": "aw;eoif",
+        "uploadImgUrl": "aws;eio"
+      }
+    ],
+    "itemName": "test22",
+    "itemSellStatus": 1,
+    "memberNickName": "메롱이다",
+    "price": 40000,
+    "regtime": "2023-10-06T14:45:08",
+    "sellPlace": "인천 연수구",
+    "stockNumber": 1,
+    "updateTime": "2023-10-06T14:45:08"
+  }
+]
