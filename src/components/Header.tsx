@@ -14,10 +14,15 @@ function Header() {
   };
 
   const onSubmit = () => {
-    navigate(`/search/${item}`);
+    if (item === "") {
+      setItem("");
+      navigate("/");
+    } else {
+      navigate(`/search/${item}`);
+    }
   };
   return (
-    <div className="sticky left-0 right-0 top-0 z-10 mx-auto flex h-16 w-full max-w-5xl items-center justify-center justify-between bg-white p-2 shadow-sm">
+    <div className="sticky left-0 right-0 top-0 z-10 mx-auto flex h-16 w-full max-w-5xl items-center justify-center bg-white p-2 shadow-sm">
       <div className="block h-full w-32">로고</div>
       <div className="h-full w-80">
         <form className="h-full w-full" onSubmit={onSubmit}>
@@ -29,6 +34,7 @@ function Header() {
             placeholder="물건 이름이나 태그를 검색해보세요"
             onChange={onChange}
           ></input>
+          <button hidden></button>
         </form>
       </div>
       {user ? (
