@@ -4,6 +4,7 @@ import Home from "./pages/Home.tsx";
 import Cart from "./pages/Cart.tsx";
 import MyPage from "./pages/MyPage.tsx";
 import Search from "./pages/Search.tsx";
+import Register from "./pages/Register.tsx";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
   },
   { path: "/search", element: <Search /> },
   { path: "/cart", element: <Cart /> },
