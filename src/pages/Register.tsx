@@ -12,6 +12,7 @@ export default function Register(): ReactElement {
   const [nickName, setNickName] = useState<string>("");
   const [addr, setAddr] = useState<string>("");
   const [addrDetail, setAddrDetail] = useState<string>("");
+  const [isModalOpened, setIsModalOpened] = useState<boolean>(false);
 
   const handleRegister = () => {
     //TODO: Implement me
@@ -21,6 +22,7 @@ export default function Register(): ReactElement {
     console.log(data);
     setAddr(data.address);
     setAddrDetail(data.buildingName);
+    setIsModalOpened(false);
   };
 
   return (
@@ -71,20 +73,21 @@ export default function Register(): ReactElement {
               placeholder="주소"
               className="input-base grow border-gray-400 bg-gray-100 pl-3"
             />
+            <button
+              className="input-base w-2/12 bg-amber-200"
+              onClick={() => setIsModalOpened(!isModalOpened)}
+            >
+              주소 검색
+            </button>
             <Popup
-              trigger={
-                <button className="input-base w-2/12 bg-amber-200">
-                  주소 검색
-                </button>
-              }
+              open={isModalOpened}
+              onClose={() => setIsModalOpened(false)}
               modal
-              nested
-              onOpen={() => console.log("open")}
               {...{ overlayStyle }}
             >
               <DaumPostcodeEmbed
                 style={{ width: "500px" }}
-                onComplete={(d) => onComplete(d)}
+                onComplete={(data) => onComplete(data)}
               />
             </Popup>
           </div>
