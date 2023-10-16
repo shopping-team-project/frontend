@@ -1,5 +1,9 @@
 import { ReactElement, useState } from "react";
 import Logo from "../components/Logo.tsx";
+import DaumPostcodeEmbed, { Address } from "react-daum-postcode";
+import Popup from "reactjs-popup";
+
+const overlayStyle = { background: "rgba(0,0,0,0.5)" };
 
 export default function Register(): ReactElement {
   const [id, setId] = useState<string>("");
@@ -11,6 +15,12 @@ export default function Register(): ReactElement {
 
   const handleRegister = () => {
     //TODO: Implement me
+  };
+
+  const onComplete = (data: Address) => {
+    console.log(data);
+    setAddr(data.address);
+    setAddrDetail(data.buildingName);
   };
 
   return (
@@ -52,14 +62,32 @@ export default function Register(): ReactElement {
             placeholder="닉네임"
             className="input-base border-gray-400 bg-gray-100 pl-3"
           />
-          <input
-            type="addr"
-            id="addr"
-            value={addr}
-            onChange={(e) => setAddr(e.target.value)}
-            placeholder="주소"
-            className="input-base border-gray-400 bg-gray-100 pl-3"
-          />
+          <div className="flex gap-4">
+            <input
+              type="addr"
+              id="addr"
+              value={addr}
+              onChange={(e) => setAddr(e.target.value)}
+              placeholder="주소"
+              className="input-base grow border-gray-400 bg-gray-100 pl-3"
+            />
+            <Popup
+              trigger={
+                <button className="input-base w-2/12 bg-amber-200">
+                  주소 검색
+                </button>
+              }
+              modal
+              nested
+              onOpen={() => console.log("open")}
+              {...{ overlayStyle }}
+            >
+              <DaumPostcodeEmbed
+                style={{ width: "500px" }}
+                onComplete={(d) => onComplete(d)}
+              />
+            </Popup>
+          </div>
           <input
             type="addrDetail"
             id="addrDetail"
