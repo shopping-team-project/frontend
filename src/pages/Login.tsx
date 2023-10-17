@@ -5,17 +5,16 @@ import googleLogin from "../../public/googleLogin.png";
 import { Link } from "react-router-dom";
 import { useAppDispatch } from "../app/hooks.ts";
 import { login } from "../features/user/userSlice.ts";
+import { useNavigate } from "react-router-dom";
 
 function Login(): ReactElement {
   const [id, setId] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
   const handleLogin = () => {
     dispatch(login());
-    //TODO: Implement me
-  };
-
-  const handleRegister = () => {
     //TODO: Implement me
   };
 
@@ -53,7 +52,7 @@ function Login(): ReactElement {
           <button
             id="btn-register"
             className="input-base bg-orange-200"
-            onClick={() => handleRegister()}
+            onClick={() => navigate("/register")}
           >
             회원가입
           </button>
